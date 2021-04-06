@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title>数组</title>
+	</head>
+	<body>
+		<div id="app">
+			
+			
+			<p>大学:{{school[0].name}},位于{{school[0].location}}</p> 
+			<p>大学:{{school[1].name}},位于{{school[1].location}}</p>
+			<p>大学:{{school[2].name}},位于{{school[2].location}}</p>
+			<p>大学:{{school[3].name}},位于{{school[3].location}}</p>
+		</div>
+		<script>
+			let v=new Vue({
+				el:'#app',
+				data:{
+					
+					school:[
+						{name:"清华大学",location:"中国北京"},
+						{name:"北京大学",location:"中国北京"},
+						{name:"哈佛大学",location:"美国马萨诸塞州"},
+						{name:"波士顿大学",location:"英国波士顿"},
+						
+					]
+				}		
+					
+				
+				
+			})
+		</script>
+	</body>
+</html>
