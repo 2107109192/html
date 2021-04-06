@@ -1,6 +1,33 @@
-function getMonthDays(year , month){
-    var stratDate = new Date(year ,month-1,1)��
-         endData = new Date(year ,month,1);
-    var days = (endData -stratDate/(1000*60*60*24);
-    return days;
-}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title>月份天数</title>
+	</head>
+	<body>
+		<div id="app">
+			
+			
+			<!-- <img src="img/mylogo.gif" width="100" /><br /> -->
+			
+			输入月份：<input v-model="Num" type="text" name="月份" id="" value=""/>  
+			<br/>
+			你输入的是{{Num}}月,一共有{{month[Num-1]}}天 //月份数减一，month下标从0开始
+			
+			
+			
+		</div>
+		<script>
+			let v=new Vue({
+				el:'#app',
+				data:{
+					Num:'1',
+					month:[31,28,31,30,31,30,31,31,30,31,30,31]
+					
+				
+				}
+			})
+		</script>
+	</body>
+</html>
