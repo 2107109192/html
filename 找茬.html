@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>找茬小游戏</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>下图共有五处不同，快用火眼金睛找一找！</p>
+			<br>
+			<img src="img/3.jpg" @click="show()">
+			<br>
+			{{userNumber}}
+			
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					userNumber:5
+				},
+				methods:{
+					show(){
+						if(event.clientX>864 &&event.clientX<894 && event.clientY>126 && event.clientY<191 &&
+						event.clientX>378 &&event.clientX<410 && event.clientY>140 && event.clientY<195){
+							v.userNumber--;
+						},
+						if(event.clientX>258 &&event.clientX<294 && event.clientY>263 && event.clientY<284 &&
+						event.clientX>741 &&event.clientX<772 && event.clientY>267 && event.clientY<283){
+							v.userNumber--;
+					    },
+						if(event.clientX>369 &&event.clientX<390 && event.clientY>336 && event.clientY<356 &&
+						event.clientX>854 &&event.clientX<872 && event.clientY>338 && event.clientY<367 ){
+							v.userNumber--;
+						},
+						if(event.clientX>140 &&event.clientX<161 && event.clientY>252 && event.clientY<272 &&
+						event.clientX>621 &&event.clientX<641 && event.clientY>251 && event.clientY<273 ){
+							v.userNumber--;
+						},
+						if(event.clientX>303 &&event.clientX<327 && event.clientY>109 && event.clientY<164 &&
+						event.clientX>780 &&event.clientX<813 && event.clientY>125 && event.clientY<164){
+							v.userNumber--;
+						}
+						
+				}
+			})
+		</script>
+	</body>
+</html>
