@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="round" width="" height=""></canvas>
+		
+		<div id="app">
+			<input type="button" @click="show()" name="" id="" value="点击绘制" />
+			<input type="text" name="" id="" value="" v-model="tem" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					tem:0
+				},
+				methods:{
+					show(){
+						let canvas =document.getElementById("round");
+						// 设置为二维图像
+						let context=canvas.getContext("2d");
+						context.beginPath();//起始点
+						//设置x,y,半径大小,起始弧度,结束弧度
+						context.arc(100,100,this.tem,0,Math.PI*2,true);
+						context.stroke();
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
