@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="round" width="" height=""></canvas>
+		
+		<div id="app">
+			<input type="button" @click="show()" name="" id="" value="点击绘制" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					
+				},
+				methods:{
+					show(){
+						let canvas =document.getElementById("round");
+						// 设置为二维图像
+						let context=canvas.getContext("2d");
+						context.beginPath();//起始点
+						//设置x,y,半径大小,起始弧度,结束弧度
+						context.arc(100,100,50,0,Math.PI*2,true);
+// 1.arc方法最后一个参数 anticlockwise 是表示当取值为true的时候逆时针画弧线 false则表示顺时针
+// 2.当arc顺时针画弧线时如果倒数第2个参数的弧度数大于2pi就一定会绘制一个完整的圆 而360这个值远大于2pi(~6.18)
+// 3.当arc逆时针画弧线时如果倒数第2个参数的弧度数大于2pi则会把第二个参数对2pi取模 这个模值就是圆弧的弧度数 所以逆时针画弧 上例的终止弧度为360%2pi不是一个完整的圆
+						context.stroke();
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
